@@ -1,13 +1,13 @@
 <?php
 
     session_start();
-    if(isset($_GET['action']) && $_GET['action']){
+/*    if(isset($_GET['action']) && $_GET['action']){
     
     session_destroy();
     session_unset();
     
     };
-
+*/
     if( isset($_POST['username']) && $_POST['username'] == 'student' &&
         isset($_POST['password']) && $_POST['password'] == 'phpakademija'
     ) {
@@ -45,7 +45,7 @@
             <label for="remember-me">Remember me</label>
             <input id="remember-me" name="remember-me" type="checkbox" />
 
-            <button type="submit">Login</button>
+            <button  type="submit">Login</button>
 
         </form>
 

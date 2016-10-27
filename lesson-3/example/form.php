@@ -2,21 +2,31 @@
 <html lang="hr">
 <head>
     <meta charset="UTF-8">
-    <style>
-        input, textarea { display: block; }
-        
-    </style>
     <title>Title</title>
-    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
 <header>
-    <ul>
-        <li><a href="index.php">Naslovnica</a></li>
-        <li><a href="form.php">Prijavi se</a></li>
-        <li>Login (za admine)</li>
-    </ul>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">PHP akademija</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="index.php">Naslovnica</a></li>
+                    <li class="active"><a href="form.php">Prijavi se</a></li>
+                    <li><a href="login.php">Login (za admine)</a></li>
+                </ul>
+        </nav>
+        
+    
 </header>
 
 <main>
@@ -28,47 +38,58 @@
     <p>Više informacija na:
         <a href="http://inchoo.hr/php-akademija-2016/" target="_blank">http://inchoo.hr/php-akademija-2016/</a>
     </p>
-
-    <!-- fix form -->
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <?php
+    if (isset($_GET['val']) && $_GET['val'] == 1){
+    ?>
+    <script>alert("Prijava je uspješna")</script>
+    <?php
+    } elseif (isset($_GET['val']) && $_GET['val'] == 2) {
+    ?>
+    <script>alert("Došlo je do greške prilikom uploada")</script>
+    <?php
+    };
+    ?>
+    <form action="upload.php" method="post" enctype="multipart/form-data" >
+        
         <label>Ime i prezime</label>
-        <input type="text" name="ime" required/><br>
-
-        <label>Mail adresa</label>
-        <input name="email" type="email" required /><br>
-
+        <input type="text" name="ime" required class="form-control" id="username"/><br>
+        
+        <label for="email">Mail adresa</label>
+        <input name="email" type="email" required class="form-control" id="email"/><br>
         <label>Smjer</label>
-        <input type="text" name="smjer" /><br>
+        <input type="text" name="smjer" class="form-control" id="username" /><br>
 
         <label>Godina studija</label><br>
-        1.<input id="check" name="godina" type="radio" value="1"/>
-        2.<input id="check" name="godina" type="radio" value="2"/>
-        3.<input id="check" name="godina" type="radio" value="3"/>
-        4.<input id="check" name="godina" type="radio" value="4"/>
-        5.<input id="check" name="godina" type="radio" value="5"/><br>
+        <div class="radio"><label><input name="godina" type="radio" value="1"/>1.</label></div>
+        <div class="radio"><label><input name="godina" type="radio" value="2"/>2.</label></div>
+        <div class="radio"><label><input name="godina" type="radio" value="3"/>3.</label></div>
+        <div class="radio"><label><input name="godina" type="radio" value="4"/>4.</label></div>
+        <div class="radio"><label><input name="godina" type="radio" value="5"/>5.</label></div>
         <br>
         <label>Što te motiviralo da se prijaviš?</label>
-        <textarea name="comm">
+        <textarea name="comm" class="form-control" id="comment" rows="5">
 
         </textarea><br>
 
 
         <label>Imaš li predznanje vezano uz web development?</label>
-        <textarea name="comm2">
+        <textarea name="comm2" class="form-control" id="comment">
 
         </textarea><br>
 
         <label>U kojim jezicima si do sada programirao?</label><br>
-        PHP<input id="check" name="jezik" type="checkbox" value="PHP" />   
-        Java<input id="check" name="jezik" type="checkbox" value="Java" />
-        Python<input id="check" name="jezik" type="checkbox" value="Python"/>
-        C++<input id="check" name="jezik" type="checkbox" value="C++"/>
-        Drugi<input id="check" name="jezik" type="checkbox" value="Drugi"/><br><br>
-        <label>Uploadaj primjer svoga koda:</label>
-        <input type="file" name="fileUpload"><br>
-
-        <button type="submit" name="submit">Prijavi se</button>
+        <div class="checkbox"><label><input class="checkbox" id="check" name="php" type="checkbox" value="1" />PHP</label></div>
+        <div class="checkbox"><label><input class="checkbox" id="check" name="java" type="checkbox" value="1" />Java</label></div>
+        <div class="checkbox"><label><input class="checkbox" id="check" name="python" type="checkbox" value="1" />Python</label></div>
+        <div class="checkbox"><label><input class="checkbox" id="check" name="c" type="checkbox" value="1" />C++</label></div>
+        <div class="checkbox"><label><input class="checkbox" id="check" name="drugi" type="checkbox" value="1" />Drugi</label></div>
+        <br><br>
+        <label class="btn btn-default btn-file">Uploadaj primjer svoga koda:
+            <input style="display: none" type="file" name="fileUpload" ><br>
+        </label> <br><br>
+        <button class="btn btn-default" type="submit" name="submit">Prijavi se</button>
 </form>
+
 </main>
 
 <footer>
