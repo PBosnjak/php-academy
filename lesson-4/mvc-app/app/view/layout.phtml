@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://localhost/lesson-4/mvc-app/public/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://localhost/lesson-4/mvc-app/public/js/bootstrap.min.js"></script>
+<nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">PHP akademija</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="index">Naslovnica</a></li>
+                    <li><a href="submit">Prijavi se</a></li>
+                    <li><a href="admin">Login (za admine)</a></li>
+                </ul>
+        </nav>
+</header>
+<main>
+
+    <?php echo $content; ?>
+    
+</main>
+<footer>
+    <p>&copy; PHP Akademija, 2016</p>
+</footer>
+
+</body>
+</html>
