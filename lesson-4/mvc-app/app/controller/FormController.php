@@ -8,7 +8,7 @@ class FormController
     public function index()
     {
         $view = new View();
-        $view->render('index', []);
+        $view->render('index');
     }
 
     /**
@@ -20,15 +20,15 @@ class FormController
             
        
         $view = new View();
-        $view->render('form', []);
+        $view->render('form');
     }
     public function admin()
     {
         
             
-       
+        
         $view = new View();
-        $view->render('admin', []);
+        $view->render('admin' );
     }
  
 

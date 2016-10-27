@@ -1,1 +1,1 @@
-
+Session::getInstance(); singleton
