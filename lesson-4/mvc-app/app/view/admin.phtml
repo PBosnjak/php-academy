@@ -1,0 +1,41 @@
+<p>Welcome admin!</p>
+<a class="btn btn-default" href="logout.php">Logout</a>
+<table class="table">        
+    <thead>
+        <tr>
+            <th>Ime i prezime</th>
+            <th>Email</th>
+            <th>Smjer</th>
+            <th>Godina</th>
+            <th>Motiv</th>
+            <th>Predznanje</th>
+            <th>Jezici</th>
+            <th>Kod</th>
+        </tr>
+    </thead>
+    <tbody>
+<?php 
+                    
+       // while($row = $result->fetch_assoc()) {
+            echo '<tr>';
+            echo '<td>' . $row['ime'] . '</td>';
+            echo '<td>' . $row['email'] . '</td>';
+            echo '<td>' . $row['smjer'] . '</td>';
+            echo '<td>' . $row['godina'] . '</td>';
+            echo '<td>' . $row['motiv'] . '</td>';
+            echo '<td>' . $row['predznanje'] . '</td>';
+            echo '<td>';
+
+            if(isset($row['php']) && $row['php'] == 1){ echo 'PHP&nbsp';};
+            if(isset($row['java']) && $row['java'] == 1){ echo 'Java&nbsp';};
+            if(isset($row['python']) && $row['python'] == 1){ echo 'Python&nbsp';};
+            if(isset($row['c']) && $row['c'] == 1){ echo 'C++&nbsp';};
+            if(isset($row['drugi']) && $row['drugi'] == 1){ echo 'Drugi';};
+
+            echo '</td>';
+            echo '<td>' . $row['kod'] . '</td>';                    
+            echo '<tr>';
+      //  };
+?>
+    </tbody>
+</table>
