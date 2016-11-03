@@ -41,8 +41,21 @@ class FormController
     }
     public function admin()
     {
-        $view = new View();      
-        $view->render('admin');
+        $sess = Session::getInstance();
+        $view = new View();  
+        $username = Request::post('username');
+        $pass = Request::post('password');
+
+        $sess->login($username, $pass);
+        
+        if ($sess->isLoggedIn() == null){
+            $view->render('login');
+        } else {
+            
+
+            $view->render('admin'); 
+        }
+        
         
         
     }

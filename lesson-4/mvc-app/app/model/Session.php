@@ -16,10 +16,10 @@ class Session
     /**
      * Logs user in
      */
-    public function login()
+    public function login($username, $pass)
     {
-        if( isset($_POST['username']) && $_POST['username'] == 'admin' &&
-        isset($_POST['password']) && $_POST['password'] == 'php'
+        if( isset($username) && $username == 'admin' &&
+        isset($pass) && $pass == 'php'
         ) {
             $_SESSION['is_logged_in'] = true;
         }
@@ -38,7 +38,11 @@ class Session
      */
     public function isLoggedIn()
     {
-        
+        if (isset($_SESSION['is_logged_in'])) {
+            return true;
+        } else {
+            return null;
+        }
     
     }
     
