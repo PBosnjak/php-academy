@@ -30,7 +30,8 @@ class Session
      */
     public function logout()
     {
-        //@todo
+        session_unset('is_logged_in');
+        session_destroy();
     }
 
     /**
@@ -38,12 +39,7 @@ class Session
      */
     public function isLoggedIn()
     {
-        if (isset($_SESSION['is_logged_in'])) {
-            return true;
-        } else {
-            return null;
-        }
-    
+        return isset($_SESSION['is_logged_in']) ? TRUE : null;
     }
     
     public static function getInstance()

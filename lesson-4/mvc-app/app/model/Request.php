@@ -45,7 +45,7 @@ class Request
     
     public static function uploadFile($key, $name, $tmp, $default='')
     {
-        $destination ="D:/xampp/htdocs/lesson-4/mvc-app/public/uploads/{$_FILES[$key][$name]}";
+        $destination = BP . "public/uploads/{$_FILES[$key][$name]}";
         move_uploaded_file($_FILES[$key][$tmp], $destination);
         return isset($_FILES[$key][$name]) ? $_FILES[$key][$name] : $default;
     }

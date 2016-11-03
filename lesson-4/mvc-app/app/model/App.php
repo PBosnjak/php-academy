@@ -46,9 +46,13 @@ final class App
      * Loads app config
      * @return array
      */
-    public static function config()
+    public static function config($key)
     {
-        return include BP . 'app/config.php';
+        $config = include BP . 'app/config.php';
+        
+        return $config[$key];
+        
+        
     }
 
 }

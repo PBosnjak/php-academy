@@ -16,7 +16,7 @@ if (isset($_GET[\'val\']) && $_GET[\'val\'] == 1){
 <?php
 };
 */?>
-<form action="http://localhost/lesson-4/mvc-app/form/submit" method="post" enctype="multipart/form-data" >
+<form action="<?php echo App::config('app_url') ?>form/submit" method="post" enctype="multipart/form-data" >
 
     <label>Ime i prezime</label>
     <input type="text" name="ime"  class="form-control" id="username"/><br>
