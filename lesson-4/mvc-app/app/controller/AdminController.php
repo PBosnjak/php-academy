@@ -13,7 +13,14 @@ class AdminController
         if ($sess->isLoggedIn() == null){
             $view->render('login');
         } else {
-            $view->render('admin'); 
+            
+            $sql = "SELECT * FROM prijave";
+            $config['name'] = "php-akademija";
+            $config['user'] = "root";
+            $config['password'] = "";
+            $db = Db::connect($config);
+            $result = $db->query($sql);
+            $view->render('admin', ['array' => $result->fetchAll()]); 
         }
         
         

@@ -38,5 +38,28 @@ class Db extends PDO
         return $stmt;
     }
     
-//     public function fetchOne(){}
+    public function fetchOne($result){
+        while ($row = $result->fetch()){
+               $arr = [
+                   'ime' => $row['ime'],
+                   'email' => $row['email']
+               ];
+        };
+        return $arr;
+    }
+   
+     public function getTable($result){
+         foreach ($result as $row) {
+             $string = '<tr>';
+             $string .= '<td>' . $row['ime'] . '</td>';
+             $string .= '<td>' . $row['email'] . '</td>';
+             $string .= '<tr>';
+         }
+
+                 
+                 
+                 
+     }  
+         
+    
 }
