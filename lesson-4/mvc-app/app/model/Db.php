@@ -21,7 +21,7 @@ class Db extends PDO
         //$this->exec('SET NAMES utf8');
     }
     
-    public static function connect($config, $name = 'php-akademija')
+    public static function connect($config, $name = 'db')
     {
         if(!isset(self::$_instance[$name])) {
             self::$_instance[$name] = new self($config);
