@@ -53,10 +53,27 @@ class Db extends PDO
              $string = '<tr>';
              $string .= '<td>' . $row['ime'] . '</td>';
              $string .= '<td>' . $row['email'] . '</td>';
+             $string .= '<td>' . $row['smjer'] . '</td>';
+             $string .= '<td>' . $row['godina'] . '</td>';
+             $string .= '<td>' . $row['motiv'] . '</td>';
+             $string .= '<td>' . $row['predznanje'] . '</td>';
+             $string .= '<td>';
+             if(isset($row['php']) && $row['php'] == 1){ $string .= 'PHP&nbsp';};
+             if(isset($row['java']) && $row['java'] == 1){ $string .= 'Java&nbsp';};
+             if(isset($row['python']) && $row['python'] == 1){ $string .= 'Python&nbsp';};
+             if(isset($row['c']) && $row['c'] == 1){ $string .= 'C++&nbsp';};
+             if(isset($row['drugi']) && $row['drugi'] == 1){ $string .= 'Drugi';};
+             $string .='</td>';
+             $string .= '<td>'
+                     . '<form method="post" action="'.  App::config("app_url")  . 'admin/download">'
+                     . '<button type="submit" name="submit" value=' .  $row['kod'] . '>Download</button>'
+                     . '</td>';
              $string .= '<tr>';
+           
+             $array[]= $string;
          }
 
-                 
+           return $array;      
                  
                  
      }  

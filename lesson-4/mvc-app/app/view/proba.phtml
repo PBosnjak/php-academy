@@ -1,0 +1,22 @@
+
+<p>Welcome admin!</p>
+<a class="btn btn-default" href="<?php echo App::config('app_url') ?>admin/logout">Logout</a>
+<table class="table">        
+    <thead>
+        <tr>
+            <th>Ime i prezime</th>
+            <th>Email</th>
+            <th>Smjer</th>
+            <th>Godina</th>
+            <th>Motiv</th>
+            <th>Predznanje</th>
+            <th>Jezici</th>
+            <th>Kod</th>
+        </tr>
+    </thead>
+    
+        
+        <?php foreach ($content as $single) echo $single; ?>
+    </tbody>
+    
+</table>
