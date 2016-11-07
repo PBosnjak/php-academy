@@ -32,7 +32,8 @@ class AdminController
         $sess = Session::getInstance();
         $view = new View(); 
         $sess->logout();
-        $view->render('login');
+        $location = "Location: " . App::config('app_url') . "admin/admin"; 
+        header($location);
     }
     
     public function download() {
@@ -49,7 +50,5 @@ class AdminController
             readfile($file);
             
         }
-        $view = new View();
-        $view->render('proba');
     }
 }
