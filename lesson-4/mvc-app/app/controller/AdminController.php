@@ -50,5 +50,9 @@ class AdminController
             readfile($file);
             
         }
+        else {
+            $location = "Location: " . App::config('app_url') . "admin/admin"; 
+            header($location);
+        }
     }
 }

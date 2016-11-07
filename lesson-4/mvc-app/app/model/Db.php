@@ -66,7 +66,7 @@ class Db extends PDO
              $string .='</td>';
              $string .= '<td>'
                      . '<form method="post" action="'.  App::config("app_url")  . 'admin/download">'
-                     . '<button type="submit" name="submit" value=' .  $row['kod'] . '>Download</button>'
+                     . '<button class="btn btn-default" type="submit" name="submit" value=' .  $row['kod'] . '>Download</button>'
                      . '</td>';
              $string .= '<tr>';
            
